@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Interview Coach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #0d6efd, #6610f2);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .feature-box {
+            padding: 30px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background: #212529;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">AI Interview Coach</a>
+
+    <div>
+      {% if current_user.is_authenticated %}
+          <a href="/profile" class="btn btn-outline-light me-2">
+              👤 {{ current_user.username }}
+          </a>
+          <a href="/logout" class="btn btn-danger">Logout</a>
+      {% else %}
+          <a href="/register" class="btn btn-success me-2">Register</a>
+          <a href="/login" class="btn btn-outline-light">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<section class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Master Your Interviews with AI</h1>
+        <p class="lead mt-3">
+            Practice mock interviews, get instant feedback, and improve your confidence.
+        </p>
+        <a href="/register" class="btn btn-light btn-lg mt-4">Start Practicing Now</a>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <h2>Why Choose AI Interview Coach?</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h4>🎤 Mock Interviews</h4>
+                    <p>Practice technical and HR questions tailored to your role.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h4>📊 Instant Feedback</h4>
+                    <p>Get AI-based evaluation and suggestions to improve answers.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h4>📁 Resume-Based Questions</h4>
+                    <p>Upload resume and get personalized interview questions.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2>How It Works</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h5>1️⃣ Register</h5>
+                <p>Create your free account.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>2️⃣ Start Interview</h5>
+                <p>Select role & begin AI mock interview.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>3️⃣ Improve</h5>
+                <p>Analyze feedback & boost your confidence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center">
+    <div class="container">
+        <p>© 2026 AI Interview Coach | Built with Flask</p>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

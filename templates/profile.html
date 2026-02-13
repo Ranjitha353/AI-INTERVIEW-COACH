@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="profile-wrapper">
+    <div class="profile-card">
+
+        <h2>Complete Your Profile</h2>
+        <p class="subtitle">Help us personalize your interview experience</p>
+
+        <form method="POST">
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" value="{{ user.full_name or '' }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Industry</label>
+                    <input type="text" name="industry" placeholder="e.g. Technology" value="{{ user.industry or '' }}">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Bio</label>
+                <textarea name="bio" placeholder="Tell us about yourself...">{{ user.bio or '' }}</textarea>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Current Role</label>
+                    <input type="text" name="current_role" placeholder="e.g. Software Engineer" value="{{ user.current_role or '' }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Years of Experience</label>
+                    <select name="experience">
+                        <option>Fresher</option>
+                        <option>1-2 Years</option>
+                        <option>3-5 Years</option>
+                        <option>5+ Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Target Job</label>
+                    <input type="text" name="target_job" placeholder="e.g. Senior Developer" value="{{ user.target_job or '' }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Target Company</label>
+                    <input type="text" name="target_company" placeholder="e.g. Google" value="{{ user.target_company or '' }}">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Skills (comma-separated)</label>
+                <input type="text" name="skills" placeholder="React, Python, SQL" value="{{ user.skills or '' }}">
+            </div>
+
+            <button type="submit" class="profile-btn">
+                Save & Go to Dashboard →
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
